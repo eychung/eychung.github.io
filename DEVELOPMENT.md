@@ -35,6 +35,9 @@ categories: gallery
 ---
 ```
 
+# Building and Deploying Site
+The build and deploy process is performed via a GitHub action workflow. Because of 3rd party plugin(s) utilizations, a custom workflow must be written. This includes changing the source to "GitHub Actions" at https://github.com/eychung/eychung.github.io/settings/pages.
+
 # Preview Site
 ```
 $ bundle exec jekyll serve
@@ -46,3 +49,9 @@ $ bundle exec jekyll serve
 https://photoswipe.com/
 
 PhotoSwipe is a JavaScript image gallery and lightbox.
+
+## Jekyll
+### jekyll-thumbnail-img
+https://github.com/abpaudel/jekyll-thumbnail-img
+
+jekyll-thumbnail-img is a Jekyll plugin to generate image thumbnails with specified width.
