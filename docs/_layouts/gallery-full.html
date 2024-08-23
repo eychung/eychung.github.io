@@ -17,15 +17,9 @@ layout: page
 
     <!-- Filter Controls -->
     <div class="filter-bar">
-        <div class="filter-group-header">
-            <label>
-                <input type="checkbox" id="filter-all" class="filter" checked>All
-            </label>
-        </div>
         <div class="filter-group dropdown">
-            <button class="dropdown-toggle" disabled>Color</button>
+            <button class="dropdown-toggle">Color</button>
             <div class="dropdown-content">
-                <label><input type="checkbox" value="black" class="filter" data-type="color">Black</label>
                 <label><input type="checkbox" value="blue" class="filter" data-type="color">Blue</label>
                 <label><input type="checkbox" value="brown" class="filter" data-type="color">Brown</label>
                 <label><input type="checkbox" value="gray" class="filter" data-type="color">Gray</label>
@@ -38,7 +32,7 @@ layout: page
             </div>
         </div>
         <div class="filter-group dropdown">
-            <button class="dropdown-toggle" disabled>Theme</button>
+            <button class="dropdown-toggle">Theme</button>
             <div class="dropdown-content">
                 <label><input type="checkbox" value="animal" class="filter" data-type="theme">Animal</label>
                 <label><input type="checkbox" value="architecture" class="filter" data-type="theme">Architecture</label>
@@ -49,26 +43,28 @@ layout: page
             </div>
         </div>
         <div class="filter-group dropdown">
-            <button class="dropdown-toggle" disabled>Places</button>
+            <button class="dropdown-toggle">Places</button>
             <div class="dropdown-content">
-                <label><input type="checkbox" value="bali" class="filter" data-type="theme">Bali</label>
-                <label><input type="checkbox" value="canada" class="filter" data-type="theme">Canada</label>
-                <label><input type="checkbox" value="japan" class="filter" data-type="theme">Japan</label>
-                <label><input type="checkbox" value="taiwan" class="filter" data-type="theme">Taiwan</label>
-                <label><input type="checkbox" value="united-states" class="filter" data-type="theme">United States</label>
-                <label><input type="checkbox" value="vietnam" class="filter" data-type="theme">Vietnam</label>
+                <label><input type="checkbox" value="bali" class="filter" data-type="places">Bali</label>
+                <label><input type="checkbox" value="canada" class="filter" data-type="places">Canada</label>
+                <label><input type="checkbox" value="japan" class="filter" data-type="places">Japan</label>
+                <label><input type="checkbox" value="taiwan" class="filter" data-type="places">Taiwan</label>
+                <label><input type="checkbox" value="united-states" class="filter" data-type="places">United States</label>
+                <label><input type="checkbox" value="vietnam" class="filter" data-type="places">Vietnam</label>
             </div>
         </div>
         <div class="filter-group dropdown">
-            <button class="dropdown-toggle" disabled>Season</button>
+            <button class="dropdown-toggle">Season</button>
             <div class="dropdown-content">
-                <label><input type="checkbox" value="spring" class="filter" data-type="theme">Spring</label>
-                <label><input type="checkbox" value="summer" class="filter" data-type="theme">Summer</label>
-                <label><input type="checkbox" value="autumn" class="filter" data-type="theme">Autumn</label>
-                <label><input type="checkbox" value="winter" class="filter" data-type="theme">Winter</label>
+                <label><input type="checkbox" value="spring" class="filter" data-type="season">Spring</label>
+                <label><input type="checkbox" value="summer" class="filter" data-type="season">Summer</label>
+                <label><input type="checkbox" value="autumn" class="filter" data-type="season">Autumn</label>
+                <label><input type="checkbox" value="winter" class="filter" data-type="season">Winter</label>
             </div>
         </div>
     </div>
+
+    <div id="filter-display-container"></div>
 
     <article>
         <h1>{{ page.subtitle }}</h1>
@@ -83,9 +79,8 @@ layout: page
         </div>
     </article>
 
-    <!-- Sets up the 'a' children for PhotoSwipe requirement -->
     <script>
-        window.onload = function () {
+        function initializePhotoSwipe() {
             const links = document.querySelectorAll('.flex-item-wrapper');
             links.forEach(link => {
                 const img = new Image();
@@ -98,59 +93,84 @@ layout: page
             });
         };
 
-        const container = document.querySelector('.flex-container');
-        const allItems = Array.from(container.children);  // Store the original items
+        // Function to create a div with text and a close button
+        function createDiv(filter, checkbox) {
+            const div = document.createElement('div');
+            div.classList.add('text-with-close');
+            
+            const span = document.createElement('span');
+            span.classList.add('filter-tag-text');
+            span.textContent = filter;
+            
+            const closeButton = document.createElement('button');
+            closeButton.classList.add('close-btn');
+            closeButton.innerHTML = '&times;';
+            closeButton.onclick = () => {
+                div.remove();
+                checkbox.checked = false;
+                applyFilters();
+                updateFilterDisplayContainer();
+            };
+            
+            div.appendChild(span);
+            div.appendChild(closeButton);
+            
+            return div;
+        }
 
-        const allFilter = document.getElementById('filter-all');
-        const filters = document.querySelectorAll('.filter');
-        const dropdowns = document.querySelectorAll('.dropdown-toggle');
+        // Function to update the container with selected options' divs
+        function updateFilterDisplayContainer() {
+            const filterDisplayContainer = document.getElementById('filter-display-container');
+            filterDisplayContainer.innerHTML = '';
 
-        function updateToggleButtonState() {
-            dropdowns.forEach(toggleButton => {
-                toggleButton.disabled = allFilter.checked;
+            const checkedFilters = document.querySelectorAll('.filter:checked');
+            checkedFilters.forEach(checkbox => {
+                const filter = checkbox.parentElement.textContent.trim();
+                const div = createDiv(filter, checkbox);
+                filterDisplayContainer.appendChild(div);
             });
         }
 
+        function getCheckedFilters(dataType) {
+            return Array.from(document.querySelectorAll(`input[data-type="${dataType}"]:checked`)).map(checkedFilter => checkedFilter.value);
+        }
+
         function applyFilters() {
-            const selectedColors = Array.from(document.querySelectorAll('input[data-type="color"]:checked')).map(cb => cb.value);
-            const selectedThemes = Array.from(document.querySelectorAll('input[data-type="theme"]:checked')).map(cb => cb.value);
+            const filterGroups = Array.from(document.querySelectorAll('.filter-group'));
+            const filters = {};
+            filterGroups.forEach(group => {
+                const type = group.querySelector('input').dataset.type;
+                filters[type] = getCheckedFilters(type);
+            });
 
             container.innerHTML = '';
+
             allItems.forEach(item => {
                 const tags = item.getAttribute('data-tags').split(' ');
-                const colorMatch = selectedColors.length === 0 || selectedColors.some(color => tags.includes(color));
-                const themeMatch = selectedThemes.length === 0 || selectedThemes.some(theme => tags.includes(theme));
+                const matches = Object.keys(filters).every(type => {
+                    const selectedFilters = filters[type];
+                    return selectedFilters.length === 0 || selectedFilters.some(filter => tags.includes(filter));
+                });
 
-                if (allFilter.checked || (colorMatch && themeMatch)) {
+                if (matches) {
                     container.appendChild(item);
                 }
             });
         }
 
-        // Toggle display for filters based on the All filter
-        filters.forEach(filter => {
-            filter.addEventListener('change', function () {
-                if (allFilter.checked) {
-                    filters.forEach(f => {
-                        if (f !== allFilter) {
-                            f.checked = false;
-                            f.disabled = true;
-                        }
-                    });
-                } else {
-                    filters.forEach(f => f.disabled = false);
-                }
+        const container = document.querySelector('.flex-container');
+        const allItems = Array.from(container.children);  // Store the original items
+
+        // Initialize PhotoSwipe setup when the window loads
+        window.onload = initializePhotoSwipe;
+
+        // Attach event listeners to all filter checkboxes
+        document.querySelectorAll('.filter').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
                 applyFilters();
-                updateToggleButtonState();
+                updateFilterDisplayContainer();
             });
         });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            applyFilters();
-            updateToggleButtonState();
-        });
-
-        allFilter.addEventListener('change', updateToggleButtonState);
 
     </script>
 

@@ -54,28 +54,6 @@
 }
 
 /* Filter Group Styles */
-.filter-group-header {
-    position: relative;
-
-    margin-right: 10px;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.filter-group-header label {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    /* Aligns the checkbox and label text vertically */
-    vertical-align: middle;
-}
-
 .filter-group {
     position: relative;
     margin-right: 10px;
@@ -111,15 +89,6 @@
 
     font-size: 12px;
     font-weight: bold;
-}
-
-.dropdown-toggle:disabled {
-    color: #a0a0a0;
-    /* Darker grey text color for disabled state */
-}
-
-.dropdown-toggle:enabled {
-    color: black;
 }
 
 .dropdown-content {
@@ -178,4 +147,39 @@
 
 .filter-group input[type="checkbox"]:checked + label {
     color: #007bff;
+}
+
+
+#filter-display-container {
+    display: flex;
+    gap: 5px;
+}
+
+.text-with-close {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.filter-tag-text {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: #333;
+    margin-left: 1px;
+}
+
+.close-btn:hover {
+    color: red;
 }
