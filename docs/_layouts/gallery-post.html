@@ -29,7 +29,7 @@ layout: page
                         {% assign slash_count = relative_path | split: '/' | size %}
                         {% if slash_count == 2 %}
                             <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper">
-                                <img src="{% thumbnail_img file.path 1000 %}" alt="{{ photo.title }}" data-description="{{ photo.description }}" class="flex-item">
+                                <img src="{% thumbnail_img file.path 600 %}" alt="{{ photo.title }}" data-description="{{ photo.description }}" class="flex-item">
                             </a>
                         {% endif %}
                     {% endif %}

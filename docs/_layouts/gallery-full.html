@@ -27,7 +27,7 @@ layout: page
                 {% assign reversed_files = site.data.images | reverse %}
                 {% for file in reversed_files %}
                     <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-tags="{{ file.tags | join: ' ' }}">
-                        <img src="{% thumbnail_img file.path 1000 %}" class="flex-item">
+                        <img src="{% thumbnail_img file.path 600 %}" class="flex-item">
                     </a>
                 {% endfor %}
             </div>
