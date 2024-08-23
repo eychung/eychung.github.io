@@ -66,7 +66,6 @@ layout: page
 
     <article>
         <h1>{{ page.subtitle }}</h1>
-        <p class="post-meta">{{ page.datePublished | default: page.date | date: "%B %d, %Y" }}</p>
         <div class="pswp-gallery pswp-gallery--single-column" id="gallery">
             <div class="flex-container">
                 {% for file in site.data.images %}
