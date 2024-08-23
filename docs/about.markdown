@@ -14,5 +14,7 @@ You can find the source code for Jekyll at GitHub:
 [jekyll][jekyll-organization] /
 [jekyll](https://github.com/jekyll/jekyll)
 
+<!-- ![Profile Picture](https://github.com/eychung.png) -->
+<img src="https://github.com/eychung.png" alt="Profile Picture" width="150" height="150">
 
 [jekyll-organization]: https://github.com/jekyll
