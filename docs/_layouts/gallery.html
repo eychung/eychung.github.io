@@ -26,7 +26,7 @@ layout: page
                 {% for file in site.static_files %}
                     {% if file.path contains image_folder %}
                         <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper">
-                            <img src="{{ file.path }}" alt="{{ photo.title }}" data-description="{{ photo.description }}" class="flex-item">
+                            <img src="{% thumbnail_img file.path 500 %}" alt="{{ photo.title }}" data-description="{{ photo.description }}" class="flex-item">
                         </a>
                     {% endif %}
                 {% endfor %}
