@@ -19,11 +19,13 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
-        {%- if post.cover -%}
-          <div>
-            <img src="/assets/images/{{ post.date | date: '%Y-%m-%d' }}/{{ post.cover }}" style="width: 100%; height: 350px; object-fit: cover;" loading="lazy">
-          </div>
-        {%- endif -%}
+          {%- if post.cover -%}
+            <div>
+              {% assign post_date = post.date | date: '%Y-%m-%d'%}
+              {% assign cover_image_path = "/assets/images/" |  append: post_date | append: "/" | append: post.cover %}
+              <img src="{% thumbnail_img cover_image_path 1000 %}" style="width: 100%; height: 350px; object-fit: cover;" loading="lazy">
+            </div>
+          {%- endif -%}
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <br>
