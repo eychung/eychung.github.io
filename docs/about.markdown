@@ -4,17 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<img src="https://github.com/eychung.png" alt="Profile Picture" width="150" height="150" align="left" style="margin-right: 20px; margin-bottom: 3px; border: 2px solid #ccc; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+## Salutations and Felicitations
+Welcome to my photography space! I enjoy taking landscape photos of architecture, cities, and nature.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I built this site mainly to share my hobby with friends and loved ones.
 
-<!-- ![Profile Picture](https://github.com/eychung.png) -->
-<img src="https://github.com/eychung.png" alt="Profile Picture" width="150" height="150">
-
-[jekyll-organization]: https://github.com/jekyll
+For me, I remember the moments in my travels better when looking back at the pictures I have taken. It is also these moments that I love to share with people.
