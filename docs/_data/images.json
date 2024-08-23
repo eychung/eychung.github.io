@@ -1,43 +1,102 @@
 [
   {
     "path": "/assets/images/2019-07-08/20190703_211926.jpg",
-    "tags": []
+    "tags": [
+      "blue",
+      "summer",
+      "sky",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190704_105432.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "summer",
+      "water",
+      "city",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190704_141014.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "black",
+      "summer",
+      "architecture",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190704_142143.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "summer",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190704_142705.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "summer",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190704_214144.jpg",
-    "tags": []
+    "tags": [
+      "blue",
+      "summer",
+      "city",
+      "evening"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190705_140653.jpg",
-    "tags": []
+    "tags": [
+      "gray",
+      "summer",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190705_141756.jpg",
-    "tags": []
+    "tags": [
+      "brown",
+      "summer",
+      "architecture",
+      "sky",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190705_144014.jpg",
-    "tags": []
+    "tags": [
+      "gray",
+      "summer",
+      "sky",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190705_154414.jpg",
-    "tags": []
+    "tags": [
+      "gray",
+      "summer",
+      "sky",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-07-08/20190705_155200.jpg",
@@ -45,7 +104,12 @@
   },
   {
     "path": "/assets/images/2019-10-17/20191014_122244.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191014_151329.jpg",
@@ -85,147 +149,322 @@
   },
   {
     "path": "/assets/images/2019-10-17/20191015_145630.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191015_145738.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191015_153038.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "sky",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191015_163840.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191015_165121.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191016_080411.jpg",
-    "tags": []
+    "tags": [
+      "brown",
+      "autumn",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191016_090617.jpg",
-    "tags": []
+    "tags": [
+      "brown",
+      "autumn",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191016_133254.jpg",
-    "tags": []
+    "tags": [
+      "brown",
+      "autumn",
+      "architecture",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191016_170954.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191016_175508.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "evening"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191016_175645.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "evening"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191017_054855.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191017_055339.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "water",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-17/20191017_055412.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "yellow",
+      "autumn",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191018_162655.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "city",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191018_174801.jpg",
-    "tags": []
+    "tags": [
+      "yellow",
+      "autumn",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191019_190433.jpg",
-    "tags": []
+    "tags": [
+      "brown",
+      "autumn",
+      "architecture",
+      "evening"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191019_214728.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191019_215626.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191020_130027.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "autumn",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191020_140041.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "architecture",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191020_151241.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191020_151729.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191020_202157.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "autumn",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191020_204154.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "autumn",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191020_220142.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "autumn",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_131803.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_131857.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "animal",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_132543.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "animal",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_133243.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_133355.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "animal",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_141704.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_142010.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191021_155341.jpg",
-    "tags": []
+    "tags": [
+      "orange",
+      "autumn",
+      "architecture",
+      "sky",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191022_121628.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "city",
+      "nature",
+      "sky",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191022_124805.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191022_141536.jpg",
@@ -233,283 +472,627 @@
   },
   {
     "path": "/assets/images/2019-10-28/20191022_160332.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "city",
+      "nature",
+      "sky",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191023_142837.jpg",
-    "tags": []
+    "tags": [
+      "gray",
+      "autumn",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191023_143312.jpg",
-    "tags": []
+    "tags": [
+      "gray",
+      "autumn",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191023_151017.jpg",
-    "tags": []
+    "tags": [
+      "gray",
+      "autumn",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191024_141227.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191024_141453.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "architecture",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191024_142328.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191024_162841.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191025_061403.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "nature",
+      "sky",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191025_075018.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191025_113250.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "water",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191025_222445.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "autumn",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191026_165715.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191027_144203.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2019-10-28/20191027_144843.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200118_124856.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_141434.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "animal",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_141807.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "animal",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_162831.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_163129.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_163331.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_163909.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_164837.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_165305.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200119_165907.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2020-01-20/20200120_091918.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2022-10-01/20220925_183155.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "water",
+      "evening"
+    ]
   },
   {
     "path": "/assets/images/2022-10-01/20220926_183343.jpg",
-    "tags": []
+    "tags": [
+      "purple",
+      "autumn",
+      "city",
+      "evening"
+    ]
   },
   {
     "path": "/assets/images/2022-10-01/20220927_071353.jpg",
-    "tags": []
+    "tags": [
+      "autumn",
+      "water",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2022-10-01/20220927_123052.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "autumn",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2022-10-01/20220927_183918.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "autumn",
+      "sky",
+      "water",
+      "evening"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230423_093647.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230423_105633.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "spring",
+      "animal",
+      "nature",
+      "city",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230423_163324.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230424_141808.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230424_154405.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "spring",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230424_154632.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230424_155517.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230425_064600.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "city",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230425_104209.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "spring",
+      "nature",
+      "water",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230425_105649.jpg",
-    "tags": []
+    "tags": [
+      "brown",
+      "spring",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230425_114741.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "spring",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230425_130154.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "spring",
+      "city",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230426_202222.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "spring",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230427_121951.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "spring",
+      "architecture",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230427_122815.jpg",
-    "tags": []
+    "tags": [
+      "gray",
+      "spring",
+      "architecture",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230427_173924.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230427_224318.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "spring",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230427_224449.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "spring",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230428_120518.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "spring",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230428_120705.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "spring",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230429_135727.jpg",
-    "tags": []
+    "tags": [
+      "spring",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-04-30/20230430_112719.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "spring",
+      "city",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230912_080912.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "orange",
+      "summer",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230912_102324.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "summer",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230912_143239.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "summer",
+      "architecture",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230912_205153.jpg",
-    "tags": []
+    "tags": [
+      "summer",
+      "architecture",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230914_092031.jpg",
-    "tags": []
+    "tags": [
+      "summer",
+      "city",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230914_173658.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "summer",
+      "city",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230915_152613.jpg",
-    "tags": []
+    "tags": [
+      "blue",
+      "summer",
+      "sky",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230915_174411.jpg",
-    "tags": []
+    "tags": [
+      "green",
+      "summer",
+      "animal",
+      "nature",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2023-09-15/20230915_214303.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "purple",
+      "summer",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2024-01-30/20240124_191030.jpg",
-    "tags": []
+    "tags": [
+      "black",
+      "winter",
+      "city",
+      "night"
+    ]
   },
   {
     "path": "/assets/images/2024-01-30/20240128_163150.jpg",
-    "tags": []
+    "tags": [
+      "winter",
+      "architecture",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2024-03-10/20240229_094717.jpg",
-    "tags": []
+    "tags": [
+      "brown",
+      "winter",
+      "architecture",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2024-03-10/20240229_115717.jpg",
-    "tags": []
+    "tags": [
+      "winter",
+      "nature",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2024-03-10/20240301_112758.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2024-03-10/20240301_114959.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2024-03-10/20240301_120124.jpg",
-    "tags": []
+    "tags": [
+      "white",
+      "winter",
+      "nature",
+      "morning"
+    ]
   },
   {
     "path": "/assets/images/2024-03-10/20240302_153918.jpg",
-    "tags": []
+    "tags": [
+      "blue",
+      "winter",
+      "city",
+      "sky",
+      "water",
+      "afternoon"
+    ]
   },
   {
     "path": "/assets/images/2024-03-10/20240303_123938.jpg",
