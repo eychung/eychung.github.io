@@ -24,7 +24,8 @@ $ gem install jekyll bundler
 To create a new post:
 1. Create a folder with `YYYY-MM-dd` format in `assets/images` and drop the images into that directory.
 2. Create a new `.md` file in `_posts` with format `YYYY-MM-dd-photos.md`, where the `YYYY-MM-dd` matches that in step 1.
-3. With the file created in step 2, use the below, replacing `<TITLE>` and `<SUBTITLE>` as well as the `YYYY-MM-dd` from step 1.:
+3. With the file created in step 2, use the below, replacing `<TITLE>` and `<SUBTITLE>` as well as the `YYYY-MM-dd` from step 1.
+4. Replace `<IMAGE_FILE>` with the image file basename; it leverage the folder structure and pull the absolute path based on the date.
 ```
 ---
 layout: gallery
@@ -32,6 +33,7 @@ title: "<TITLE>"
 subtitle: "<SUBTITLE>"
 date: YYYY-MM-dd
 categories: gallery
+cover: <IMAGE_FILE>
 ---
 ```
 
