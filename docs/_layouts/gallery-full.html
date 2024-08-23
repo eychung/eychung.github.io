@@ -1,0 +1,169 @@
+---
+layout: page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/photoswipe.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Filter Controls -->
+    <div class="filter-bar">
+        <div class="filter-group-header">
+            <label>
+                <input type="checkbox" id="filter-all" class="filter" checked>All
+            </label>
+        </div>
+        <div class="filter-group dropdown">
+            <button class="dropdown-toggle" disabled>Color</button>
+            <div class="dropdown-content">
+                <label><input type="checkbox" value="black" class="filter" data-type="color">Black</label>
+                <label><input type="checkbox" value="blue" class="filter" data-type="color">Blue</label>
+                <label><input type="checkbox" value="gray" class="filter" data-type="color">Gray</label>
+                <label><input type="checkbox" value="green" class="filter" data-type="color">Green</label>
+                <label><input type="checkbox" value="orange" class="filter" data-type="color">Orange</label>
+                <label><input type="checkbox" value="purple" class="filter" data-type="color">Purple</label>
+                <label><input type="checkbox" value="red" class="filter" data-type="color">Red</label>
+                <label><input type="checkbox" value="white" class="filter" data-type="color">White</label>
+                <label><input type="checkbox" value="yellow" class="filter" data-type="color">Yellow</label>
+            </div>
+        </div>
+        <div class="filter-group dropdown">
+            <button class="dropdown-toggle" disabled>Season</button>
+            <div class="dropdown-content">
+                <label><input type="checkbox" value="spring" class="filter" data-type="theme">Spring</label>
+                <label><input type="checkbox" value="summer" class="filter" data-type="theme">Summer</label>
+                <label><input type="checkbox" value="fall" class="filter" data-type="theme">Fall</label>
+                <label><input type="checkbox" value="winter" class="filter" data-type="theme">Winter</label>
+            </div>
+        </div>
+        <div class="filter-group dropdown">
+            <button class="dropdown-toggle" disabled>Theme</button>
+            <div class="dropdown-content">
+                <label><input type="checkbox" value="animals" class="filter" data-type="theme">Animals</label>
+                <label><input type="checkbox" value="city" class="filter" data-type="theme">City</label>
+                <label><input type="checkbox" value="nature" class="filter" data-type="theme">Nature</label>
+                <label><input type="checkbox" value="sky" class="filter" data-type="theme">Sky</label>
+                <label><input type="checkbox" value="water" class="filter" data-type="theme">Water</label>
+            </div>
+        </div>
+        <div class="filter-group dropdown">
+            <button class="dropdown-toggle" disabled>Time</button>
+            <div class="dropdown-content">
+                <label><input type="checkbox" value="day" class="filter" data-type="theme">Day</label>
+                <label><input type="checkbox" value="night" class="filter" data-type="theme">Night</label>
+            </div>
+        </div>
+    </div>
+
+    <article>
+        <h1>{{ page.subtitle }}</h1>
+        <p class="post-meta">{{ page.datePublished | default: page.date | date: "%B %d, %Y" }}</p>
+        <div class="pswp-gallery pswp-gallery--single-column" id="gallery">
+            <div class="flex-container">
+                {% for file in site.data.images %}
+                    <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-tags="{{ file.tags | join: ' ' }}">
+                        <img src="{% thumbnail_img file.path 500 %}" class="flex-item">
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+
+    <!-- Sets up the 'a' children for PhotoSwipe requirement -->
+    <script>
+        window.onload = function () {
+            const links = document.querySelectorAll('.flex-item-wrapper');
+            links.forEach(link => {
+                const img = new Image();
+                img.src = link.href;
+
+                img.onload = function () {
+                    link.setAttribute('data-pswp-height', img.naturalHeight);
+                    link.setAttribute('data-pswp-width', img.naturalWidth);
+                };
+            });
+        };
+
+        const container = document.querySelector('.flex-container');
+        const allItems = Array.from(container.children);  // Store the original items
+
+        const allFilter = document.getElementById('filter-all');
+        const filters = document.querySelectorAll('.filter');
+        const dropdowns = document.querySelectorAll('.dropdown-toggle');
+
+        function updateToggleButtonState() {
+            dropdowns.forEach(toggleButton => {
+                toggleButton.disabled = allFilter.checked;
+            });
+        }
+
+        function applyFilters() {
+            const selectedColors = Array.from(document.querySelectorAll('input[data-type="color"]:checked')).map(cb => cb.value);
+            const selectedThemes = Array.from(document.querySelectorAll('input[data-type="theme"]:checked')).map(cb => cb.value);
+
+            container.innerHTML = '';
+            allItems.forEach(item => {
+                const tags = item.getAttribute('data-tags').split(' ');
+                const colorMatch = selectedColors.length === 0 || selectedColors.some(color => tags.includes(color));
+                const themeMatch = selectedThemes.length === 0 || selectedThemes.some(theme => tags.includes(theme));
+
+                if (allFilter.checked || (colorMatch && themeMatch)) {
+                    container.appendChild(item);
+                }
+            });
+        }
+
+        // Toggle display for filters based on the All filter
+        filters.forEach(filter => {
+            filter.addEventListener('change', function () {
+                if (allFilter.checked) {
+                    filters.forEach(f => {
+                        if (f !== allFilter) {
+                            f.checked = false;
+                            f.disabled = true;
+                        }
+                    });
+                } else {
+                    filters.forEach(f => f.disabled = false);
+                }
+                applyFilters();
+                updateToggleButtonState();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyFilters();
+            updateToggleButtonState();
+        });
+
+        allFilter.addEventListener('change', updateToggleButtonState);
+
+    </script>
+
+    <!-- PhotoSwipe module -->
+    <script type="module">
+        import PhotoSwipeLightbox from '/assets/js/photoswipe-lightbox.esm.js';
+        import PhotoSwipe from '/assets/js/photoswipe.esm.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+            bgOpacity: 0.6,
+            gallery: '#gallery',
+            children: 'a',  // Elements within gallery (slides)
+            showHideAnimationType: 'zoom',
+            pswpModule: PhotoSwipe
+        });
+        lightbox.init();
+    </script>
+
+</body>
+
+</html>

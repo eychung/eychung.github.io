@@ -21,8 +21,8 @@
 title: photography.in.time
 email: chung.yanhon@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Some moments in time over the years of
-  traveling that's worth sharing.
+  Some unedited moments in time over the years
+  of traveling that's worth sharing.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  eychung
