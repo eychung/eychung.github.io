@@ -73,7 +73,7 @@ layout: page
             <div class="flex-container">
                 {% for file in site.data.images %}
                     <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-tags="{{ file.tags | join: ' ' }}">
-                        <img src="{% thumbnail_img file.path 500 %}" class="flex-item">
+                        <img src="{% thumbnail_img file.path 1000 %}" class="flex-item">
                     </a>
                 {% endfor %}
             </div>
