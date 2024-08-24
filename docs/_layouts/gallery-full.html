@@ -26,37 +26,27 @@ layout: page
             <div class="flex-container">
                 {% assign reversed_files = site.data.images | reverse %}
                 {% for file in reversed_files %}
-                    <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-tags="{{ file.tags | join: ' ' }}">
-                        <img src="{% thumbnail_img file.path 600 %}" class="flex-item">
-                    </a>
+                <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper"
+                    data-tags="{{ file.tags | join: ' ' }}" data-pswp-height="{{ file.height }}"
+                    data-pswp-width="{{ file.width }}">
+                    <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
+                        class="flex-item">
+                </a>
                 {% endfor %}
             </div>
         </div>
     </article>
 
     <script>
-        function initializePhotoSwipe() {
-            const links = document.querySelectorAll('.flex-item-wrapper');
-            links.forEach(link => {
-                const img = new Image();
-                img.src = link.href;
-
-                img.onload = function () {
-                    link.setAttribute('data-pswp-height', img.naturalHeight);
-                    link.setAttribute('data-pswp-width', img.naturalWidth);
-                };
-            });
-        };
-
         // Function to create a div with text and a close button
         function createDiv(filter, checkbox) {
             const div = document.createElement('div');
             div.classList.add('text-with-close');
-            
+
             const span = document.createElement('span');
             span.classList.add('filter-tag-text');
             span.textContent = filter;
-            
+
             const closeButton = document.createElement('button');
             closeButton.classList.add('close-btn');
             closeButton.innerHTML = '&times;';
@@ -66,10 +56,10 @@ layout: page
                 applyFilters();
                 updateFilterDisplayContainer();
             };
-            
+
             div.appendChild(span);
             div.appendChild(closeButton);
-            
+
             return div;
         }
 
@@ -164,10 +154,6 @@ layout: page
 
         const container = document.querySelector('.flex-container');
         const allItems = Array.from(container.children);  // Store the original items
-
-        // Initialize PhotoSwipe setup when the window loads
-        window.onload = initializePhotoSwipe;
-
     </script>
 
     <!-- PhotoSwipe module -->

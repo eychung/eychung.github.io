@@ -26,6 +26,16 @@ async function getJpgImages(dir) {
                 const metadata = await exiftool.read(fullPath);
                 const tagArray = metadata.Subject;
 
+                width = metadata.ImageWidth;
+                height = metadata.ImageHeight;
+
+                // Adjust for orientation
+                const orientation = metadata.Orientation;
+                if (orientation === 6 || orientation === 8) {
+                    // 6 means Rotate 90 CW, 8 means Rotate 90 CCW
+                    [width, height] = [height, width];  // Swap width and height
+                }
+
                 if (Array.isArray(tagArray)) {
                     // If metadata.Subject is an array, process it
                     imageTags = tagArray.flatMap(tagString =>
@@ -38,12 +48,16 @@ async function getJpgImages(dir) {
                 results.push({
                     path: relativePath,
                     tags: imageTags || [], // Extract tags
+                    width: width || null,  // Extracted width
+                    height: height || null, // Extracted height
                 });
             } catch (err) {
                 console.error(`Error reading metadata for ${relativePath}:`, err);
                 results.push({
                     path: relativePath,
                     tags: [], // Default to empty tags in case of error
+                    width: null, // Default to null in case of error
+                    height: null, // Default to null in case of error
                 });
             }
         }
