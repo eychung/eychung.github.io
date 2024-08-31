@@ -27,7 +27,7 @@ $ brew install node
 ```
 
 # Preview Site (Locally)
-For a basic build without re-mapping image tags:
+For a basic build without re-mapping image tags, enter `/docs` and run:
 ```
 $ bundle exec jekyll serve
 ```
