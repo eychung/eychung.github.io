@@ -29,20 +29,17 @@
       <div class="wrapper">
 
         <nav id="toc">
-          <ul>
-            <li><a href="#highlights">Highlights</a></li>
-            <li><a href="#architecture">Architecture</a></li>
-            <li><a href="#city">City</a></li>
-            <li><a href="#nature">Nature</a></li>
-            <li><a href="#posts">Posts</a></li>
-          </ul>
+          <div class="nav-item"><a href="#showcase">Showcase</a></div>
+          <div class="nav-item"><a href="#urban">Urban</a></div>
+          <div class="nav-item"><a href="#nature">Nature</a></div>
+          <div class="nav-item"><a href="#posts">Posts</a></div>
         </nav>
 
-        <h2 id="highlights">Highlights</h2>
+        <h2 id="showcase">Showcase</h2>
         <div class="section-container">
           <div class="pswp-gallery pswp-gallery--single-column" id="top-all">
             <div class="flex-container">
-              {% for file in site.data.highlights %}
+              {% for file in site.data.showcase %}
               <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
                 data-pswp-width="{{ file.width }}">
                 <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
@@ -52,27 +49,12 @@
             </div>
           </div>
         </div>
-
-        <h2 id="architecture">Architecture</h2>
+        
+        <h2 id="urban">Urban</h2>
         <div class="section-container">
-          <div class="pswp-gallery pswp-gallery--single-column" id="top-architecture">
+          <div class="pswp-gallery pswp-gallery--single-column" id="top-urban">
             <div class="flex-container">
-              {% for file in site.data.top-architecture %}
-              <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
-                data-pswp-width="{{ file.width }}">
-                <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
-                  class="flex-item">
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-
-        <h2 id="city">City</h2>
-        <div class="section-container">
-          <div class="pswp-gallery pswp-gallery--single-column" id="top-city">
-            <div class="flex-container">
-              {% for file in site.data.top-city %}
+              {% for file in site.data.top-urban %}
               <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
                 data-pswp-width="{{ file.width }}">
                 <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"

@@ -52,25 +52,14 @@ html {
 
 #toc {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+
     background-color: #f8f9fa;
-    padding: 10px 20px;
+    padding: 10px;
     margin-bottom: 30px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#toc ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    justify-content: center;
-}
-
-#toc li {
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 #toc a {
