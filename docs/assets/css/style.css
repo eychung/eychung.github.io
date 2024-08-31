@@ -23,8 +23,11 @@ a:hover {
 
 @media screen and (max-width: 600px) {
     .site-nav {
-        background-color: var(--bg-secondary);
-        border-color: var(--bg-dark);
+        background-color: var(--bg-secondary) !important;
+        border-color: var(--bg-primary) !important;
+    }
+    .site-nav .menu-icon > svg {
+        fill: var(--text-secondary) !important;
     }
 }
 
