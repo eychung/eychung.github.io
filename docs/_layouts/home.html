@@ -1,41 +1,204 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
-<div class="home">
-  {%- if page.title -%}
+<head>
+  {%- include head.html -%}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/photoswipe.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+  {%- include header.html -%}
+
+  <div class="home">
+    {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+    {%- endif -%}
 
-  {{ content }}
+    <section id="hero" class="parallax-section">
+      <div class="parallax-background"></div>
+      <div class="content">
+        <h1 class="hero-text">Welcome</h1>
+      </div>
+    </section>
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-          {%- if post.cover -%}
-            <div>
-              {% assign post_date = post.date | date: '%Y-%m-%d'%}
-              {% assign cover_image_path = "/assets/images/" |  append: post_date | append: "/" | append: post.cover %}
-              <img src="{% thumbnail_img cover_image_path 1000 %}" style="width: 100%; height: 350px; object-fit: cover;" loading="lazy">
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+
+        <nav id="toc">
+          <ul>
+            <li><a href="#highlights">Highlights</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#city">City</a></li>
+            <li><a href="#nature">Nature</a></li>
+            <li><a href="#posts">Posts</a></li>
+          </ul>
+        </nav>
+
+        <h2 id="highlights">Highlights</h2>
+        <div class="section-container">
+          <div class="pswp-gallery pswp-gallery--single-column" id="top-all">
+            <div class="flex-container">
+              {% for file in site.data.highlights %}
+              <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
+                data-pswp-width="{{ file.width }}">
+                <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
+                  class="flex-item">
+              </a>
+              {% endfor %}
             </div>
-          {%- endif -%}
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <br>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          </div>
+        </div>
+
+        <h2 id="architecture">Architecture</h2>
+        <div class="section-container">
+          <div class="pswp-gallery pswp-gallery--single-column" id="top-architecture">
+            <div class="flex-container">
+              {% for file in site.data.top-architecture %}
+              <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
+                data-pswp-width="{{ file.width }}">
+                <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
+                  class="flex-item">
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <h2 id="city">City</h2>
+        <div class="section-container">
+          <div class="pswp-gallery pswp-gallery--single-column" id="top-city">
+            <div class="flex-container">
+              {% for file in site.data.top-city %}
+              <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
+                data-pswp-width="{{ file.width }}">
+                <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
+                  class="flex-item">
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <h2 id="nature">Nature</h2>
+        <div class="section-container">
+          <div class="pswp-gallery pswp-gallery--single-column" id="top-nature">
+            <div class="flex-container">
+              {% for file in site.data.top-nature %}
+              <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
+                data-pswp-width="{{ file.width }}">
+                <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
+                  class="flex-item">
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        {%- if site.posts.size > 0 -%}
+        <h2 class="post-list-heading" id="posts">{{ page.list_title | default: "Posts" }}</h2>
+        <div class="section-container">
+          <ul class="post-list">
+            {%- for post in site.posts -%}
+            <li>
+              <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+              </h3>
+              {%- if post.cover -%}
+              <div>
+                {% assign post_date = post.date | date: '%Y-%m-%d'%}
+                {% assign cover_image_path = "/assets/images/" | append: post_date | append: "/" | append: post.cover %}
+                <img src="{% thumbnail_img cover_image_path 1000 %}"
+                  style="width: 100%; height: 350px; object-fit: cover;" loading="lazy">
+              </div>
+              {%- endif -%}
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+              <br>
+              {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+              {%- endif -%}
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
         {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
 
-  {%- endif -%}
+        <button id="return-to-top">Top</button>
 
-</div>
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toTopButton = document.getElementById("return-to-top");
+
+        // Listen for both scroll and touchmove events
+        window.addEventListener("scroll", toggleButtonVisibility);
+        window.addEventListener("touchmove", toggleButtonVisibility);
+
+        function toggleButtonVisibility() {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            toTopButton.style.display = "block";
+          } else {
+            toTopButton.style.display = "none";
+          }
+        }
+
+        // Smooth scroll back to top
+        toTopButton.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        });
+      });
+
+      document.addEventListener('scroll', function () {
+        const parallaxSection = document.querySelector('.parallax-section');
+        const parallaxBackground = document.querySelector('.parallax-background');
+        const pageContent = document.querySelector('.page-content');
+
+        const scrollPosition = window.scrollY;
+        const parallaxHeight = parallaxSection.offsetHeight;
+        const contentOffsetTop = pageContent.offsetTop;
+
+        // Apply parallax effect only if we're within the parallax section
+        if (scrollPosition < contentOffsetTop) {
+          parallaxBackground.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+        } else {
+          parallaxBackground.style.transform = `translateY(${contentOffsetTop * 0.5}px)`;
+        }
+      });
+    </script>
+
+    <!-- PhotoSwipe module -->
+    <script type="module">
+      function initializePhotoSwipe(gallery_id) {
+        const lightbox = new PhotoSwipeLightbox({
+          bgOpacity: 0.8,
+          gallery: gallery_id,
+          children: 'a',  // Elements within gallery (slides)
+          showHideAnimationType: 'zoom',
+          pswpModule: PhotoSwipe
+        });
+        lightbox.init();
+      }
+
+      import PhotoSwipeLightbox from '/assets/js/photoswipe-lightbox.esm.js';
+      import PhotoSwipe from '/assets/js/photoswipe.esm.js';
+
+      const galleryIds = ['#top-all', '#top-architecture', '#top-city', '#top-nature'];
+      galleryIds.forEach(id => initializePhotoSwipe(id));
+    </script>
+
+</body>
+
+</html>

@@ -79,7 +79,6 @@
 /* Dropdown Styles */
 .dropdown-toggle {
     background-color: #f8f9fa;
-    color: black;
 
     border: none;
     padding: 5px 10px;
@@ -87,8 +86,15 @@
 
     cursor: pointer;
 
-    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font: 12px "Lato", sans-serif;
     font-weight: bold;
+    color: #333;
+}
+
+.dropdown-toggle:hover {
+    color: black;
 }
 
 .dropdown-content {
@@ -145,7 +151,7 @@
     border-color: #007bff;
 }
 
-.filter-group input[type="checkbox"]:checked + label {
+.filter-group input[type="checkbox"]:checked+label {
     color: #007bff;
 }
 
