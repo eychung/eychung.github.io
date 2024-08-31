@@ -1,0 +1,90 @@
+<footer class="site-footer h-card">
+    <data class="u-url" href="{{ " /" | relative_url }}"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list">
+                    <li class="p-name">
+                        {%- if site.author -%}
+                        {{ site.author | escape }}
+                        {%- else -%}
+                        {{ site.title | escape }}
+                        {%- endif -%}
+                    </li>
+                    {%- if site.email -%}
+                    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    {%- endif -%}
+                </ul>
+                <ul class="contact-list">
+                    <li>
+                        <button onclick="toggleDarkMode()" class="btn-theme-icon">
+                            <svg width="30" height="30" id="light-icon">
+                                <circle cx="15" cy="15" r="6" fill="currentColor" />
+
+                                <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15"
+                                    y1="1" x2="15" y2="4"></line>
+
+                                <use href="#ray" transform="rotate(45 15 15)" />
+                                <use href="#ray" transform="rotate(90 15 15)" />
+                                <use href="#ray" transform="rotate(135 15 15)" />
+                                <use href="#ray" transform="rotate(180 15 15)" />
+                                <use href="#ray" transform="rotate(225 15 15)" />
+                                <use href="#ray" transform="rotate(270 15 15)" />
+                                <use href="#ray" transform="rotate(315 15 15)" />
+                            </svg>
+                            <svg width="30" height="30" id="dark-icon">
+                                <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+                {%- include social.html -%}
+            </div>
+
+            <div class="footer-col footer-col-3">
+                <p>{{- site.description | escape -}}</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+    const lightIcon = document.getElementById("light-icon");
+    const darkIcon = document.getElementById("dark-icon");
+
+    // Function to set theme and save to local storage
+    function setTheme(theme) {
+        document.documentElement.className = theme;
+        localStorage.setItem('theme', theme);
+    }
+
+    function toggleDarkMode() {
+        darkMode = !darkMode;
+        updateIcons();
+        setTheme(darkMode ? 'dark-theme' : 'light-theme');
+    }
+
+    function updateIcons() {
+        lightIcon.style.display = darkMode ? "none" : "block";
+        darkIcon.style.display = darkMode ? "block" : "none";
+    }
+
+    // Initialize theme and icon visibility based on local storage
+    function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        darkMode = savedTheme === 'dark-theme';
+        document.documentElement.className = darkMode ? 'dark-theme' : 'light-theme';
+        updateIcons();
+    }
+
+    window.addEventListener('DOMContentLoaded', initializeTheme);
+</script>

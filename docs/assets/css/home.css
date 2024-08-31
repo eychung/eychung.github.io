@@ -111,5 +111,5 @@ html {
 }
 
 #return-to-top:hover {
-    background-color: var(--bg-dark);
+    color: var(--text-primary);
 }

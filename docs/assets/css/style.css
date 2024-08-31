@@ -8,21 +8,17 @@ h1, h2, h3 {
 
 a:hover {
     color: var(--text-accent) !important;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .site-title, .page-link {
-    color: var(--text-light) !important;
+    color: var(--text-primary) !important;
     text-decoration: none;
 }
 
 .site-title:hover, .page-link:hover {
     color: var(--text-primary) !important;
     text-decoration: none;
-}
-
-.icon {
-    fill: var(--text-secondary) !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -226,7 +222,7 @@ a:hover {
     font-weight: bold;
 }
 
-.close-btn {
+.btn-close {
     background-color: transparent;
     border: none;
     font-size: 15px;
@@ -235,6 +231,16 @@ a:hover {
     margin-left: 1px;
 }
 
-.close-btn:hover {
-    color: red;
+.btn-close:hover {
+    color: #b30000;
+}
+
+.btn-theme-icon {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    fill: var(--text-secondary);
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
 }

@@ -1,5 +1,5 @@
-/* Default Theme (Light Theme) */
-:root.dark-theme {
+/* Light Theme */
+:root.light-theme {
     /* Background colors */
     --bg-primary: white;         /* White for main content */
     --bg-secondary: #f8f9fa;     /* Light gray for sections */
@@ -8,15 +8,15 @@
     --bg-dark: #f0f0f0;          /* Dark background, e.g., for headers or footers */
 
     /* Text colors */
-    --text-primary: black;       /* Default text color */
+    --text-primary: #202020;       /* Default text color */
     --text-secondary: #333333;   /* Secondary text color, less emphasis */
-    --text-light: black;         /* Light text, for dark backgrounds */
+    --text-light: #100000;         /* Light text, for dark backgrounds */
     --text-accent: #007bff;      /* Accent text color, e.g., links */
     --text-muted: #adb5bd;       /* Muted text color for less important info */
 }
 
 /* Dark Theme */
-:root {
+:root.dark-theme {
     /* Background colors */
     --bg-primary: #202020;       /* White for main content */
     --bg-secondary: #2e2e2e;     /* Light gray for sections */

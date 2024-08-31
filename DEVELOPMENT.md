@@ -37,6 +37,11 @@ For a complete build, run the custom rake script:
 $ bundle exec rake custom_serve
 ```
 
+To locate the directory of the base Minima theme files:
+```
+$ bundle show minima
+```
+
 View webpage at: http://localhost:4000/
 
 # Building and Deploying Site
