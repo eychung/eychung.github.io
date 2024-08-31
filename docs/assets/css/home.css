@@ -11,7 +11,6 @@ html {
 .site-header {
     position: fixed;
     width: 100%;
-    background-color: white;
     z-index: 1000;
 }
 
@@ -55,7 +54,7 @@ html {
     align-items: center;
     justify-content: space-around;
 
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
     padding: 10px;
     margin-bottom: 30px;
     border-radius: 5px;
@@ -67,30 +66,27 @@ html {
     text-transform: uppercase;
     font: 12px "Lato", sans-serif;
     font-weight: bold;
-    color: #333;
+    color: var(--text-secondary);
 }
 
 #toc a:hover {
     text-decoration: none;
-    color: black;
+    color: var(--text-primary) !important;
 }
 
 .content {
     position: relative;
     z-index: 1;
     text-align: center;
-    color: white;
+    color: var(--bg-primary);
     padding-top: 40vh;
 }
 
 .hero-text {
     letter-spacing: 5px;
     text-transform: uppercase;
-    font: 20px "Lato", sans-serif
-}
-
-.page-content {
-    background-color: white;
+    font: 20px "Lato", sans-serif;
+    color: white !important;
 }
 
 .section-container {
@@ -101,8 +97,8 @@ html {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #dadada;
-    color: white;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -115,5 +111,5 @@ html {
 }
 
 #return-to-top:hover {
-    background-color: #ccc;
+    background-color: var(--bg-dark);
 }

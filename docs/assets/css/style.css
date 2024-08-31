@@ -1,3 +1,49 @@
+p {
+    color: var(--text-primary);
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+}
+
+a:hover {
+    color: var(--text-accent) !important;
+    text-decoration: none;
+}
+
+.site-title, .page-link {
+    color: var(--text-light) !important;
+    text-decoration: none;
+}
+
+.site-title:hover, .page-link:hover {
+    color: var(--text-primary) !important;
+    text-decoration: none;
+}
+
+.icon {
+    fill: var(--text-secondary) !important;
+}
+
+@media screen and (max-width: 600px) {
+    .site-nav {
+        background-color: var(--bg-secondary);
+        border-color: var(--bg-dark);
+    }
+}
+
+.site-header {
+    background-color: var(--bg-dark);
+}
+
+.page-content {
+    background-color: var(--bg-primary);
+}
+
+.site-footer {
+    background-color: var(--bg-dark);
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +64,7 @@
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.6);
-    color: white;
+    color: var(--bg-primary);
     padding: 0.5rem;
     opacity: 0;
     transition: opacity 0.3s;
@@ -47,7 +93,7 @@
     align-items: center;
     justify-content: space-around;
 
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -78,7 +124,7 @@
 
 /* Dropdown Styles */
 .dropdown-toggle {
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
 
     border: none;
     padding: 5px 10px;
@@ -90,11 +136,11 @@
     text-transform: uppercase;
     font: 12px "Lato", sans-serif;
     font-weight: bold;
-    color: #333;
+    color: var(--text-secondary);
 }
 
 .dropdown-toggle:hover {
-    color: black;
+    color: var(--text-primary);
 }
 
 .dropdown-content {
@@ -107,10 +153,10 @@
 
     min-width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--bg-dark);
     border-radius: 5px;
 
-    background-color: white;
+    background-color: var(--bg-primary);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
     font-size: 10px;
@@ -119,9 +165,11 @@
 .dropdown-content label {
     display: block;
     margin: 5px 0;
+    padding: 1px;
     align-items: center;
     /* Ensures vertical alignment in the dropdown as well */
     white-space: nowrap;
+    color: var(--text-primary);
 }
 
 .dropdown:hover .dropdown-content {
@@ -139,11 +187,11 @@
     cursor: pointer;
     vertical-align: middle;
 
-    border: 1px solid #ddd;
+    border: 1px solid var(--bg-dark);
     border-radius: 3px;
     padding: 5px;
 
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
 }
 
 .filter-group input[type="checkbox"]:checked {
@@ -166,8 +214,9 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid var(--bg-dark);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     margin-top: 10px;
     border-radius: 5px;
 }
@@ -182,7 +231,7 @@
     border: none;
     font-size: 15px;
     cursor: pointer;
-    color: #333;
+    color: var(--text-secondary);
     margin-left: 1px;
 }
 
