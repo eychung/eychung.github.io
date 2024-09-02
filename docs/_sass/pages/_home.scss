@@ -1,18 +1,6 @@
-body,
-html {
-    height: 100%;
-    scroll-behavior: smooth;
-}
-
-html {
-    scroll-padding-top: calc(30px * 1.85 + 20px);
-}
-
-/* Parallax Section */
-.parallax-section {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+.home-page-content {
+    background-color: var(--bg-primary);
+    padding-top: 20px;
 }
 
 .parallax-background {
@@ -42,6 +30,46 @@ html {
     z-index: -1;
 }
 
+.parallax-section {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-text {
+    color: white;
+    font:
+        20px "Lato",
+        sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.site-header {
+    position: fixed !important;
+}
+
+#return-to-top {
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+    border: none;
+    bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    position: fixed;
+    right: 20px;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+#return-to-top:hover {
+    color: var(--text-primary);
+}
+
 #toc {
     align-items: center;
     background-color: var(--bg-secondary);
@@ -64,46 +92,4 @@ html {
 #toc a:hover {
     color: var(--text-primary);
     text-decoration: none;
-}
-
-.content {
-    color: var(--bg-primary);
-    padding-top: 40vh;
-    position: relative;
-    text-align: center;
-    z-index: 1;
-}
-
-.hero-text {
-    color: white;
-    font:
-        20px "Lato",
-        sans-serif;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-
-.section-container {
-    margin-bottom: 30px;
-}
-
-#return-to-top {
-    background-color: var(--bg-secondary);
-    border-radius: 5px;
-    border: none;
-    bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    color: var(--text-secondary);
-    cursor: pointer;
-    display: none;
-    font-size: 16px;
-    padding: 10px 15px;
-    position: fixed;
-    right: 20px;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-}
-
-#return-to-top:hover {
-    color: var(--text-primary);
 }

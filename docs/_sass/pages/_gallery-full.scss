@@ -1,8 +1,102 @@
+.dropdown .dropdown-toggle:disabled + .dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    border: 1px solid var(--bg-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    font-size: 10px;
+    left: 0;
+    min-width: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+}
+
+.dropdown-content label {
+    align-items: center;
+    color: var(--text-primary);
+    display: block;
+    margin: 5px 0;
+    padding: 1px;
+    white-space: nowrap;
+}
+
+.dropdown-toggle {
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-weight: bold;
+    font: $action-bar-font;
+    letter-spacing: 1.5px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.dropdown-toggle:hover {
+    color: var(--text-primary);
+}
+
+.filter-group {
+    margin-right: 10px;
+    position: relative;
+}
+
+.filter-group input {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.filter-group input[type="checkbox"] {
+    appearance: none;
+    background-color: var(--bg-secondary);
+    border-radius: 3px;
+    border: 1px solid var(--bg-dark);
+    cursor: pointer;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.filter-group input[type="checkbox"]:checked {
+    background-color: $color-selection-accent-light;
+    border-color: $color-selection-accent-light;
+}
+
+.filter-group label {
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 14px;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.filter-tag-text {
+    font-size: 10px;
+    font-weight: bold;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
     overflow: hidden;
+}
+
+.flex-item {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
 }
 
 .flex-item-wrapper {
@@ -23,107 +117,12 @@
     transition: opacity 0.3s;
 }
 
-.flex-item-wrapper:hover .grid-item-overlay {
-    opacity: 1;
-}
-
 .flex-item-wrapper:hover img {
     opacity: 0.7;
 }
 
-.flex-item {
-    /* Maintain aspect ratio by cropping */
-    max-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-}
-
-/* Filter Group Styles */
-.filter-group {
-    margin-right: 10px;
-    position: relative;
-}
-
-.filter-group label {
-    align-items: center;
-    cursor: pointer;
-    display: inline-flex;
-    font-size: 14px;
-    margin: 0 10px;
-    vertical-align: middle;
-}
-
-.filter-group input {
-    margin-right: 5px;
-    vertical-align: middle;
-}
-
-/* Dropdown Styles */
-.dropdown-toggle {
-    background-color: var(--bg-secondary);
-    border-radius: 5px;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    font-weight: bold;
-    font: $action-bar-font;
-    letter-spacing: 1.5px;
-    padding: 5px 10px;
-    text-transform: uppercase;
-}
-
-.dropdown-toggle:hover {
-    color: var(--text-primary);
-}
-
-.dropdown-content {
-    background-color: var(--bg-primary);
-    border-radius: 5px;
-    border: 1px solid var(--bg-dark);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: none;
-    font-size: 10px;
-    left: 0;
-    min-width: 100%;
-    padding: 10px;
-    position: absolute;
-    top: 100%;
-    z-index: 1000;
-}
-
-.dropdown-content label {
-    /* Ensures vertical alignment in the dropdown as well */
-    align-items: center;
-    color: var(--text-primary);
-    display: block;
-    margin: 5px 0;
-    padding: 1px;
-    white-space: nowrap;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Hide dropdown content if the toggle button is disabled */
-.dropdown .dropdown-toggle:disabled + .dropdown-content {
-    display: none;
-}
-
-/* Checkbox Styles */
-.filter-group input[type="checkbox"] {
-    appearance: none;
-    background-color: var(--bg-secondary);
-    border-radius: 3px;
-    border: 1px solid var(--bg-dark);
-    cursor: pointer;
-    padding: 5px;
-    vertical-align: middle;
-}
-
-.filter-group input[type="checkbox"]:checked {
-    background-color: $selection-accent-light;
-    border-color: $selection-accent-light;
+.flex-item-wrapper:hover .grid-item-overlay {
+    opacity: 1;
 }
 
 .text-with-close {
@@ -136,11 +135,6 @@
     justify-content: space-between;
     margin-top: 10px;
     padding-left: 10px;
-}
-
-.filter-tag-text {
-    font-size: 10px;
-    font-weight: bold;
 }
 
 #filter-display-container {
