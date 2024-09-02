@@ -36,7 +36,7 @@
     border: none;
     color: var(--text-secondary);
     cursor: pointer;
-    font-weight: bold;
+    font-weight: bold !important;
     font: $action-bar-font;
     letter-spacing: 1.5px;
     padding: 5px 10px;

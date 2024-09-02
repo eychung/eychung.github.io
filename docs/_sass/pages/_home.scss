@@ -45,10 +45,6 @@
     text-transform: uppercase;
 }
 
-.site-header {
-    position: fixed !important;
-}
-
 #return-to-top {
     background-color: var(--bg-secondary);
     border-radius: 5px;
@@ -83,7 +79,7 @@
 
 #toc a {
     color: var(--text-secondary);
-    font-weight: bold;
+    font-weight: bold !important;
     font: $action-bar-font;
     letter-spacing: 1.5px;
     text-transform: uppercase;
