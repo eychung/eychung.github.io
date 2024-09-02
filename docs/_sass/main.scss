@@ -1,29 +1,14 @@
 // Base
-@import 
-    'base/base'
-;
+@import "base/base";
 
 // Components
-@import
-    'components/action-bar',
-    'components/buttons'
-;
+@import "components/action-bar", "components/buttons";
 
 // Layouts
-@import
-    'layouts/default',
-    'layouts/footer',
-    'layouts/header'
-;
+@import "layouts/default", "layouts/footer", "layouts/header";
 
 // Pages
-@import
-    'pages/gallery-full',
-    'pages/home'
-;
+@import "pages/gallery-full", "pages/home";
 
 // Themes
-@import
-    'themes/dark',
-    'themes/light'
-;
+@import "themes/dark", "themes/light";

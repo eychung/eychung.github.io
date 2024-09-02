@@ -1,13 +1,13 @@
 :root.light-theme {
     /* Background colors */
-    --bg-primary: white;         /* White for main content */
-    --bg-secondary: #f8f9fa;     /* Light gray for sections */
-    --bg-muted: #f1f3f5;         /* Muted background for less important areas */
-    --bg-dark: #f0f0f0;          /* Dark background, e.g., for headers or footers */
+    --bg-primary: white; /* White for main content */
+    --bg-secondary: #f8f9fa; /* Light gray for sections */
+    --bg-muted: #f1f3f5; /* Muted background for less important areas */
+    --bg-dark: #f0f0f0; /* Dark background, e.g., for headers or footers */
 
     /* Text colors */
-    --text-primary: #202020;       /* Default text color */
-    --text-secondary: #333333;   /* Secondary text color, less emphasis */
-    --text-light: #100000;         /* Light text, for dark backgrounds */
-    --text-muted: #adb5bd;       /* Muted text color for less important info */
+    --text-primary: #202020; /* Default text color */
+    --text-secondary: #333333; /* Secondary text color, less emphasis */
+    --text-light: #100000; /* Light text, for dark backgrounds */
+    --text-muted: #adb5bd; /* Muted text color for less important info */
 }

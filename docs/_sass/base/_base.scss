@@ -5,11 +5,13 @@ p {
     color: var(--text-primary);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--text-primary);
 }
 
 a:hover {
-    color: $text-accent-light !important;
-    text-decoration: none !important;
+    color: $text-accent-light;
+    text-decoration: none;
 }

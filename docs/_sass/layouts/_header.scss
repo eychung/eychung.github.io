@@ -1,4 +1,5 @@
 .site-header {
+    border-top: 0px;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -8,12 +9,14 @@
     background-color: var(--bg-dark);
 }
 
-.site-title, .page-link {
+.site-title,
+.page-link {
     color: var(--text-primary) !important;
     text-decoration: none;
 }
 
-.site-title:hover, .page-link:hover {
+.site-title:hover,
+.page-link:hover {
     color: var(--text-primary) !important;
     text-decoration: none;
 }
@@ -23,6 +26,7 @@
         background-color: var(--bg-secondary) !important;
         border-color: var(--bg-primary) !important;
     }
+
     .site-nav .menu-icon > svg {
         fill: var(--text-secondary) !important;
     }
