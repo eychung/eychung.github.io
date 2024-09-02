@@ -8,6 +8,7 @@ layout: page
 <head>
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/photoswipe.css">
+    <script type="module" src="/assets/js/gallery-post.js"></script>
 </head>
 
 <article>
@@ -30,37 +31,3 @@ layout: page
         </div>
     </div>
 </article>
-
-<!-- Sets up the 'a' children for PhotoSwipe requirement -->
-<script>
-    window.onload = function () {
-        const links = document.querySelectorAll('.flex-item-wrapper');
-        links.forEach(link => {
-            const img = new Image();
-            img.src = link.href;
-
-            img.onload = function () {
-                const height = img.naturalHeight;
-                const width = img.naturalWidth;
-
-                link.setAttribute('data-pswp-height', height);
-                link.setAttribute('data-pswp-width', width);
-            };
-        });
-    };
-</script>
-
-<!-- PhotoSwipe module -->
-<script type="module">
-    import PhotoSwipeLightbox from '/assets/js/photoswipe-lightbox.esm.js';
-    import PhotoSwipe from '/assets/js/photoswipe.esm.js';
-
-    const lightbox = new PhotoSwipeLightbox({
-        bgOpacity: 0.8,
-        gallery: '#gallery',
-        children: 'a',  // Elements within gallery (slides)
-        showHideAnimationType: 'zoom',
-        pswpModule: PhotoSwipe
-    });
-    lightbox.init();
-</script>

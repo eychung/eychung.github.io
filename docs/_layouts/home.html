@@ -5,6 +5,7 @@ layout: base
 <head>
   <link rel="stylesheet" href="/assets/css/photoswipe.css">
   <link rel="stylesheet" href="assets/css/home.css">
+  <script type="module" src="/assets/js/home.js"></script>
 </head>
 
 <section id="hero" class="parallax-section">
@@ -100,66 +101,3 @@ layout: base
 
   </div>
 </main>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toTopButton = document.getElementById("return-to-top");
-
-    // Listen for both scroll and touchmove events
-    window.addEventListener("scroll", toggleButtonVisibility);
-    window.addEventListener("touchmove", toggleButtonVisibility);
-
-    function toggleButtonVisibility() {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        toTopButton.style.display = "block";
-      } else {
-        toTopButton.style.display = "none";
-      }
-    }
-
-    // Smooth scroll back to top
-    toTopButton.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-  });
-
-  document.addEventListener('scroll', function () {
-    const parallaxSection = document.querySelector('.parallax-section');
-    const parallaxBackground = document.querySelector('.parallax-background');
-    const pageContent = document.querySelector('.page-content');
-
-    const scrollPosition = window.scrollY;
-    const parallaxHeight = parallaxSection.offsetHeight;
-    const contentOffsetTop = pageContent.offsetTop;
-
-    // Apply parallax effect only if we're within the parallax section
-    if (scrollPosition < contentOffsetTop) {
-      parallaxBackground.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-    } else {
-      parallaxBackground.style.transform = `translateY(${contentOffsetTop * 0.5}px)`;
-    }
-  });
-</script>
-
-<!-- PhotoSwipe module -->
-<script type="module">
-  function initializePhotoSwipe(gallery_id) {
-    const lightbox = new PhotoSwipeLightbox({
-      bgOpacity: 0.8,
-      gallery: gallery_id,
-      children: 'a',  // Elements within gallery (slides)
-      showHideAnimationType: 'zoom',
-      pswpModule: PhotoSwipe
-    });
-    lightbox.init();
-  }
-
-  import PhotoSwipeLightbox from '/assets/js/photoswipe-lightbox.esm.js';
-  import PhotoSwipe from '/assets/js/photoswipe.esm.js';
-
-  const galleryIds = ['#top-all', '#top-urban', '#top-nature'];
-  galleryIds.forEach(id => initializePhotoSwipe(id));
-</script>
