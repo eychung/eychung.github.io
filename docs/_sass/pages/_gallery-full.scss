@@ -1,55 +1,8 @@
-p {
-    color: var(--text-primary);
-}
-
-h1, h2, h3 {
-    color: var(--text-primary);
-}
-
-a:hover {
-    color: var(--text-accent) !important;
-    text-decoration: none !important;
-}
-
-.site-title, .page-link {
-    color: var(--text-primary) !important;
-    text-decoration: none;
-}
-
-.site-title:hover, .page-link:hover {
-    color: var(--text-primary) !important;
-    text-decoration: none;
-}
-
-@media screen and (max-width: 600px) {
-    .site-nav {
-        background-color: var(--bg-secondary) !important;
-        border-color: var(--bg-primary) !important;
-    }
-    .site-nav .menu-icon > svg {
-        fill: var(--text-secondary) !important;
-    }
-}
-
-.site-header {
-    background-color: var(--bg-dark);
-}
-
-.page-content {
-    background-color: var(--bg-primary);
-}
-
-.site-footer {
-    background-color: var(--bg-dark);
-}
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     gap: .25rem;
-    /* Space between images */
     overflow: hidden;
-    /* Hide the overflow */
 }
 
 .flex-item-wrapper {
@@ -86,18 +39,6 @@ a:hover {
 }
 
 
-/* Filter Bar Styles */
-.filter-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    background-color: var(--bg-secondary);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 /* Filter Group Styles */
 .filter-group {
     position: relative;
@@ -109,10 +50,8 @@ a:hover {
     margin: 0 10px;
     display: inline-flex;
     align-items: center;
-    /* Aligns the checkbox and label text vertically */
     vertical-align: middle;
     font-size: 14px;
-    /* Adjust the text size if needed */
 }
 
 .filter-group input {
@@ -133,7 +72,7 @@ a:hover {
 
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font: 12px "Lato", sans-serif;
+    font: $action-bar-font;
     font-weight: bold;
     color: var(--text-secondary);
 }
@@ -194,14 +133,9 @@ a:hover {
 }
 
 .filter-group input[type="checkbox"]:checked {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: $selection-accent-light;
+    border-color: $selection-accent-light;
 }
-
-.filter-group input[type="checkbox"]:checked+label {
-    color: #007bff;
-}
-
 
 #filter-display-container {
     display: flex;
@@ -223,27 +157,4 @@ a:hover {
 .filter-tag-text {
     font-size: 10px;
     font-weight: bold;
-}
-
-.btn-close {
-    background-color: transparent;
-    border: none;
-    font-size: 15px;
-    cursor: pointer;
-    color: var(--text-secondary);
-    margin-left: 1px;
-}
-
-.btn-close:hover {
-    color: #b30000;
-}
-
-.btn-theme-icon {
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    fill: var(--text-secondary);
-    margin: 0px;
-    padding: 0px;
-    cursor: pointer;
 }

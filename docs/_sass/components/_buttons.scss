@@ -1,0 +1,22 @@
+.btn-close {
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    margin-left: 1px;
+}
+
+.btn-close:hover {
+    color: #b30000;
+}
+
+.btn-theme-icon {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    fill: var(--text-secondary);
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+}

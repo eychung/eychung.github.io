@@ -8,12 +8,6 @@ html {
     scroll-padding-top: calc(30px * 1.85 + 20px);
 }
 
-.site-header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
 /* Parallax Section */
 .parallax-section {
     position: relative;
@@ -46,7 +40,6 @@ html {
     background-position: center;
     opacity: 0.5;
     z-index: -1;
-    /* Ensures the image stays behind the content */
 }
 
 #toc {
@@ -64,7 +57,7 @@ html {
 #toc a {
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font: 12px "Lato", sans-serif;
+    font: $action-bar-font;
     font-weight: bold;
     color: var(--text-secondary);
 }

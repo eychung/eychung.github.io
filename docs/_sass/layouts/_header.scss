@@ -1,0 +1,29 @@
+.site-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.site-header {
+    background-color: var(--bg-dark);
+}
+
+.site-title, .page-link {
+    color: var(--text-primary) !important;
+    text-decoration: none;
+}
+
+.site-title:hover, .page-link:hover {
+    color: var(--text-primary) !important;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    .site-nav {
+        background-color: var(--bg-secondary) !important;
+        border-color: var(--bg-primary) !important;
+    }
+    .site-nav .menu-icon > svg {
+        fill: var(--text-secondary) !important;
+    }
+}

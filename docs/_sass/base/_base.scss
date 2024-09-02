@@ -1,0 +1,15 @@
+$selection-accent-light: #007bff;
+$text-accent-light: #007bff;
+
+p {
+    color: var(--text-primary);
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+}
+
+a:hover {
+    color: $text-accent-light !important;
+    text-decoration: none !important;
+}

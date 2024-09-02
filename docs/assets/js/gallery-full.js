@@ -78,7 +78,7 @@ function applyFilters() {
 }
 
 function loadFilters(xml) {
-    const filterContainer = document.querySelector('.filter-bar');
+    const filterContainer = document.querySelector('.action-bar');
     const filterGroups = xml.getElementsByTagName('filter-group');
 
     Array.from(filterGroups).forEach(group => {
