@@ -7,8 +7,8 @@ layout: page
 
 <head>
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/photoswipe.css">
-    <script type="module" src="/assets/js/gallery-post.js"></script>
+    <link href="/assets/css/photoswipe.css" rel="stylesheet">
+    <script src="/assets/js/gallery-post.js" type="module"></script>
 </head>
 
 <article>
@@ -21,9 +21,9 @@ layout: page
             {% assign relative_path = file.path | remove: image_folder %}
             {% assign slash_count = relative_path | split: '/' | size %}
             {% if slash_count == 2 %}
-            <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper">
-                <img src="{% thumbnail_img file.path 600 %}" alt="{{ photo.title }}"
-                    data-description="{{ photo.description }}" class="flex-item">
+            <a class="flex-item-wrapper" href="{{ file.path }}" target="_blank">
+                <img alt="{{ photo.title }}" class="flex-item" data-description="{{ photo.description }}"
+                    src="{% thumbnail_img file.path 600 %}">
             </a>
             {% endif %}
             {% endif %}

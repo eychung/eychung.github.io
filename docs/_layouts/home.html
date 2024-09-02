@@ -14,7 +14,7 @@ layout: base
   </div>
 </section>
 
-<main class="page-content" aria-label="Content">
+<main class="home-page-content" aria-label="Content">
   <div class="wrapper">
 
     <nav id="toc" class="action-bar">
@@ -29,9 +29,9 @@ layout: base
       <div class="pswp-gallery pswp-gallery--single-column" id="top-all">
         <div class="flex-container">
           {% for file in site.data.showcase %}
-          <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
-            data-pswp-width="{{ file.width }}">
-            <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}" class="flex-item">
+          <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
+            href="{{ file.path }}" target="_blank">
+            <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" src="{% thumbnail_img file.path 600 %}">
           </a>
           {% endfor %}
         </div>
@@ -43,9 +43,9 @@ layout: base
       <div class="pswp-gallery pswp-gallery--single-column" id="top-urban">
         <div class="flex-container">
           {% for file in site.data.top-urban %}
-          <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
-            data-pswp-width="{{ file.width }}">
-            <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}" class="flex-item">
+          <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
+            href="{{ file.path }}" target="_blank">
+            <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" src="{% thumbnail_img file.path 600 %}">
           </a>
           {% endfor %}
         </div>
@@ -57,9 +57,9 @@ layout: base
       <div class="pswp-gallery pswp-gallery--single-column" id="top-nature">
         <div class="flex-container">
           {% for file in site.data.top-nature %}
-          <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
-            data-pswp-width="{{ file.width }}">
-            <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}" class="flex-item">
+          <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
+            href="{{ file.path }}" target="_blank">
+            <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" src="{% thumbnail_img file.path 600 %}">
           </a>
           {% endfor %}
         </div>
@@ -81,8 +81,8 @@ layout: base
           <div>
             {% assign post_date = post.date | date: '%Y-%m-%d'%}
             {% assign cover_image_path = "/assets/images/" | append: post_date | append: "/" | append: post.cover %}
-            <img src="{% thumbnail_img cover_image_path 1000 %}" style="width: 100%; height: 350px; object-fit: cover;"
-              loading="lazy">
+            <img loading="lazy" src="{% thumbnail_img cover_image_path 1000 %}"
+              style="width: 100%; height: 350px; object-fit: cover;">
           </div>
           {%- endif -%}
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

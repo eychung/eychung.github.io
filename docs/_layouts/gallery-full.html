@@ -4,8 +4,8 @@ layout: page
 
 <head>
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/photoswipe.css">
-    <script type="module" src="/assets/js/gallery-full.js"></script>
+    <link href="/assets/css/photoswipe.css" rel="stylesheet">
+    <script src="/assets/js/gallery-full.js" type="module"></script>
 </head>
 
 <!-- Filter Controls -->
@@ -19,10 +19,10 @@ layout: page
         <div class="flex-container">
             {% assign reversed_files = site.data.images | reverse %}
             {% for file in reversed_files %}
-            <a href="{{ file.path }}" target="_blank" class="flex-item-wrapper" data-tags="{{ file.tags | join: ' ' }}"
-                data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}">
-                <img src="{% thumbnail_img file.path 600 %}" data-src="{% thumbnail_img file.path 600 %}"
-                    class="flex-item">
+            <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
+                data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
+                <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}"
+                    src="{% thumbnail_img file.path 600 %}">
             </a>
             {% endfor %}
         </div>
