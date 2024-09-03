@@ -38,10 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('scroll', function () {
     const parallaxBackground = document.querySelector('.parallax-background');
-    const pageContent = document.querySelector('.page-content');
-
     const scrollPosition = window.scrollY;
-    const contentOffsetTop = pageContent.offsetTop;
+    const contentOffsetTop = document.querySelector('.action-bar').offsetTop;
 
     // Apply parallax effect only if we're within the parallax section
     if (scrollPosition < contentOffsetTop) {
