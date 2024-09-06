@@ -18,10 +18,23 @@ layout: page
     <div class="pswp-gallery pswp-gallery--single-column" id="gallery">
         <div class="flex-container">
             {% assign reversed_files = site.data.images | reverse %}
-            {% for file in reversed_files %}
+            {% assign eager_files = reversed_files | slice: 0, 10 %}
+            {% assign lazy_files = reversed_files | slice: 10, reversed_files.size %}
+
+            <!-- Eager load first 10 images -->
+            {% for file in eager_files %}
             <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
                 data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
                 <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}"
+                    src="{% thumbnail_img file.path 600 %}">
+            </a>
+            {% endfor %}
+
+            <!-- Lazy load remaining images -->
+            {% for file in lazy_files %}
+            <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
+                data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
+                <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" loading="lazy"
                     src="{% thumbnail_img file.path 600 %}">
             </a>
             {% endfor %}
