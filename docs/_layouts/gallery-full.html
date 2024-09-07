@@ -18,26 +18,39 @@ layout: page
     <div class="pswp-gallery pswp-gallery--single-column" id="gallery">
         <div class="flex-container">
             {% assign reversed_files = site.data.images | reverse %}
-            {% assign eager_files = reversed_files | slice: 0, 10 %}
-            {% assign lazy_files = reversed_files | slice: 10, reversed_files.size %}
 
-            <!-- Eager load first 10 images -->
-            {% for file in eager_files %}
-            <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
-                data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
-                <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}"
-                    src="{% thumbnail_img file.path 600 %}">
-            </a>
-            {% endfor %}
+            <!-- This matches .flex-item-wrapper's height -->
+            {% assign max_row_height = 300 %}
 
-            <!-- Lazy load remaining images -->
-            {% for file in lazy_files %}
-            <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
-                data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
-                <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" loading="lazy"
-                    src="{% thumbnail_img file.path 600 %}">
-            </a>
-            {% endfor %}
+            {% for file in reversed_files %}
+            {% assign original_width = file.width %}
+            {% assign original_height = file.height %}
+
+            <!-- Determine scaling factor based on the longest dimension -->
+            {% if original_width > original_height %}
+            {% assign longest_dimension = original_width %}
+            {% else %}
+            {% assign longest_dimension = original_height %}
+            {% endif %}
+
+            {% assign scale_factor = max_row_height | times: 1.0 | divided_by: longest_dimension %}
+            {% assign new_width = original_width | times: scale_factor %}
+
+            <!-- Handle eager vs lazy loading -->
+            {% if forloop.index <= 10 %} <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
+                data-pswp-width="{{ file.width }}" data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}"
+                target="_blank">
+                <img class="flex-item" height="{{ max_row_height }}" src="{% thumbnail_img file.path 600 %}"
+                    width="{{ new_width }}">
+                </a>
+                {% else %}
+                <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
+                    data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
+                    <img class="flex-item" height="{{ max_row_height }}" loading="lazy"
+                        src="{% thumbnail_img file.path 600 %}" width="{{ new_width }}">
+                </a>
+                {% endif %}
+                {% endfor %}
         </div>
     </div>
 </article>
