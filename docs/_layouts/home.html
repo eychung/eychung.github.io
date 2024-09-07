@@ -31,7 +31,8 @@ layout: base
           {% for file in site.data.showcase %}
           <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
             href="{{ file.path }}" target="_blank">
-            <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" src="{% thumbnail_img file.path 600 %}">
+            <img class="flex-item" loading="lazy" data-src="{% thumbnail_img file.path 600 %}"
+              src="{% thumbnail_img file.path 600 %}">
           </a>
           {% endfor %}
         </div>
@@ -45,7 +46,8 @@ layout: base
           {% for file in site.data.top-urban %}
           <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
             href="{{ file.path }}" target="_blank">
-            <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" src="{% thumbnail_img file.path 600 %}">
+            <img class="flex-item" loading="lazy" data-src="{% thumbnail_img file.path 600 %}"
+              src="{% thumbnail_img file.path 600 %}">
           </a>
           {% endfor %}
         </div>
@@ -59,7 +61,8 @@ layout: base
           {% for file in site.data.top-nature %}
           <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
             href="{{ file.path }}" target="_blank">
-            <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}" src="{% thumbnail_img file.path 600 %}">
+            <img class="flex-item" loading="lazy" data-src="{% thumbnail_img file.path 600 %}"
+              src="{% thumbnail_img file.path 600 %}">
           </a>
           {% endfor %}
         </div>
