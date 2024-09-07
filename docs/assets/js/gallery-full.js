@@ -120,10 +120,13 @@ function loadFilters(xml) {
     });
 }
 
-fetch('/assets/filters.xml')
-    .then(response => response.text())
-    .then(str => (new window.DOMParser()).parseFromString(str, 'text/xml'))
-    .then(loadFilters)
-    .catch(error => console.error('Error loading XML:', error));
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('/assets/filters.xml')
+        .then(response => response.text())
+        .then(str => (new window.DOMParser()).parseFromString(str, 'text/xml'))
+        .then(loadFilters)
+        .catch(error => console.error('Error loading XML:', error));
+
+});
 
 lightbox.init();
