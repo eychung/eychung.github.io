@@ -77,56 +77,11 @@ function applyFilters() {
     });
 }
 
-function loadFilters(xml) {
-    const filterContainer = document.querySelector('.action-bar');
-    const filterGroups = xml.getElementsByTagName('filter-group');
-
-    Array.from(filterGroups).forEach(group => {
-        const groupName = group.getAttribute('name');
-        const groupDiv = document.createElement('div');
-        groupDiv.classList.add('filter-group', 'dropdown');
-
-        const button = document.createElement('button');
-        button.classList.add('dropdown-toggle');
-        button.textContent = groupName;
-        groupDiv.appendChild(button);
-
-        const dropdownContent = document.createElement('div');
-        dropdownContent.classList.add('dropdown-content');
-
-        const options = group.getElementsByTagName('option');
-        Array.from(options).forEach(option => {
-            const label = document.createElement('label');
-            const input = document.createElement('input');
-            input.type = 'checkbox';
-            input.value = option.getAttribute('value');
-            input.classList.add('filter');
-            input.dataset.type = groupName.toLowerCase();
-            label.appendChild(input);
-            label.appendChild(document.createTextNode(option.textContent));
-            dropdownContent.appendChild(label);
-        });
-
-        groupDiv.appendChild(dropdownContent);
-        filterContainer.appendChild(groupDiv);
+document.querySelectorAll('.filter').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        applyFilters();
+        updateFilterDisplayContainer();
     });
-
-    // Attach event listeners to all filter checkboxes
-    document.querySelectorAll('.filter').forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            applyFilters();
-            updateFilterDisplayContainer();
-        });
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    fetch('/assets/filters.xml')
-        .then(response => response.text())
-        .then(str => (new window.DOMParser()).parseFromString(str, 'text/xml'))
-        .then(loadFilters)
-        .catch(error => console.error('Error loading XML:', error));
-
 });
 
 lightbox.init();
