@@ -15,7 +15,7 @@
     font-size: 10px;
     left: 0;
     min-width: 100%;
-    padding: 10px;
+    padding: 10px 2px;
     position: absolute;
     top: 100%;
     z-index: 1000;
@@ -25,8 +25,8 @@
     align-items: center;
     color: var(--text-primary);
     display: block;
-    margin: 5px 0;
-    padding: 1px;
+    margin: 2px 0;
+    padding: 3px;
     white-space: nowrap;
 }
 
@@ -94,6 +94,7 @@
 }
 
 .flex-item {
+    background-color: lightgray;
     max-height: 100%;
     min-width: 100%;
     object-fit: cover;
@@ -101,7 +102,7 @@
 
 .flex-item-wrapper {
     flex: 1 1 auto;
-    height: 20vh;
+    height: 300px;
 }
 
 .flex-item-wrapper-overlay {

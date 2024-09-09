@@ -9,7 +9,54 @@ layout: page
 </head>
 
 <!-- Filter Controls -->
-<div class="action-bar"></div>
+<div class="action-bar">
+    <div class="filter-group dropdown">
+        <button class="dropdown-toggle">Color</button>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="black" class="filter" data-type="color">Black</label>
+            <label><input type="checkbox" value="blue" class="filter" data-type="color">Blue</label>
+            <label><input type="checkbox" value="brown" class="filter" data-type="color">Brown</label>
+            <label><input type="checkbox" value="gray" class="filter" data-type="color">Gray</label>
+            <label><input type="checkbox" value="green" class="filter" data-type="color">Green</label>
+            <label><input type="checkbox" value="orange" class="filter" data-type="color">Orange</label>
+            <label><input type="checkbox" value="purple" class="filter" data-type="color">Purple</label>
+            <label><input type="checkbox" value="red" class="filter" data-type="color">Red</label>
+            <label><input type="checkbox" value="white" class="filter" data-type="color">White</label>
+            <label><input type="checkbox" value="yellow" class="filter" data-type="color">Yellow</label>
+        </div>
+    </div>
+    <div class="filter-group dropdown">
+        <button class="dropdown-toggle">Theme</button>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="animal" class="filter" data-type="theme">Animal</label>
+            <label><input type="checkbox" value="architecture" class="filter" data-type="theme">Architecture</label>
+            <label><input type="checkbox" value="city" class="filter" data-type="theme">City</label>
+            <label><input type="checkbox" value="nature" class="filter" data-type="theme">Nature</label>
+            <label><input type="checkbox" value="sky" class="filter" data-type="theme">Sky</label>
+            <label><input type="checkbox" value="water" class="filter" data-type="theme">Water</label>
+        </div>
+    </div>
+    <div class="filter-group dropdown">
+        <button class="dropdown-toggle">Places</button>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="bali" class="filter" data-type="places">Bali</label>
+            <label><input type="checkbox" value="canada" class="filter" data-type="places">Canada</label>
+            <label><input type="checkbox" value="japan" class="filter" data-type="places">Japan</label>
+            <label><input type="checkbox" value="taiwan" class="filter" data-type="places">Taiwan</label>
+            <label><input type="checkbox" value="united-states" class="filter" data-type="places">United States</label>
+            <label><input type="checkbox" value="vietnam" class="filter" data-type="places">Vietnam</label>
+        </div>
+    </div>
+    <div class="filter-group dropdown">
+        <button class="dropdown-toggle">Season</button>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="spring" class="filter" data-type="season">Spring</label>
+            <label><input type="checkbox" value="summer" class="filter" data-type="season">Summer</label>
+            <label><input type="checkbox" value="autumn" class="filter" data-type="season">Autumn</label>
+            <label><input type="checkbox" value="winter" class="filter" data-type="season">Winter</label>
+        </div>
+    </div>
+</div>
 
 <div id="filter-display-container"></div>
 
@@ -18,13 +65,39 @@ layout: page
     <div class="pswp-gallery pswp-gallery--single-column" id="gallery">
         <div class="flex-container">
             {% assign reversed_files = site.data.images | reverse %}
+
+            <!-- This matches .flex-item-wrapper's height -->
+            {% assign max_row_height = 300 %}
+
             {% for file in reversed_files %}
-            <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
-                data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
-                <img class="flex-item" data-src="{% thumbnail_img file.path 600 %}"
-                    src="{% thumbnail_img file.path 600 %}">
-            </a>
-            {% endfor %}
+            {% assign original_width = file.width %}
+            {% assign original_height = file.height %}
+
+            <!-- Determine scaling factor based on the longest dimension -->
+            {% if original_width > original_height %}
+            {% assign longest_dimension = original_width %}
+            {% else %}
+            {% assign longest_dimension = original_height %}
+            {% endif %}
+
+            {% assign scale_factor = max_row_height | times: 1.0 | divided_by: longest_dimension %}
+            {% assign new_width = original_width | times: scale_factor %}
+
+            <!-- Handle eager vs lazy loading -->
+            {% if forloop.index <= 10 %} <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}"
+                data-pswp-width="{{ file.width }}" data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}"
+                target="_blank">
+                <img class="flex-item" height="{{ max_row_height }}" src="{% thumbnail_img file.path 600 %}"
+                    width="{{ new_width }}">
+                </a>
+                {% else %}
+                <a class="flex-item-wrapper" data-pswp-height="{{ file.height }}" data-pswp-width="{{ file.width }}"
+                    data-tags="{{ file.tags | join: ' ' }}" href="{{ file.path }}" target="_blank">
+                    <img class="flex-item" height="{{ max_row_height }}" loading="lazy"
+                        src="{% thumbnail_img file.path 600 %}" width="{{ new_width }}">
+                </a>
+                {% endif %}
+                {% endfor %}
         </div>
     </div>
 </article>
