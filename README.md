@@ -38,6 +38,8 @@ If you will like filtering enabled in the main gallery, you will need to tag the
 3. Type your tag. If you have multiple tags, separate each tag with a semicolon.
 4. Click Apply to save changes.
 
+For some images taken on Samsung phones, you may encounter a "too much metadata to be written to the bitmap" message. In these cases, do a simple lossless rotation in Microsoft Photos and save. This will have a new encoding that is much shorter than EXIF block (ref: https://answers.microsoft.com/en-us/windows/forum/all/windows-10-0x88982f52-there-is-too-much-metadata/9b5ab801-bd14-4e4b-9108-e34cc4e48b83).
+
 If you do not have a Windows machine, you can use any software that can inject (image) metadata. Make sure the key is "Subject" and that the tags are semicolon delimited.
 
 You can view/modify existing filters in the `docs/assets/filters.xml` file. The value must match the tag in order to register the filter.
