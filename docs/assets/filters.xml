@@ -23,7 +23,10 @@
     <filter-group name="Places">
         <option value="bali">Bali</option>
         <option value="canada">Canada</option>
+        <option value="hong-kong">Hong Kong</option>
+        <option value="iceland">Iceland</option>
         <option value="japan">Japan</option>
+        <option value="macao">Macao</option>
         <option value="taiwan">Taiwan</option>
         <option value="united-states">United States</option>
         <option value="vietnam">Vietnam</option>
